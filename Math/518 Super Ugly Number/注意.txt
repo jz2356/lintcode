@@ -1,0 +1,9 @@
+取长度：
+Java    primes.length
+Python  len(primes)
+
+
+
+数组：
+java初始化 int[n]    默认长为n，全0
+Python  [0]*n

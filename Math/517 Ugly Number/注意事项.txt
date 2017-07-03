@@ -1,0 +1,14 @@
+Java中if while
+
+if(a>0){
+
+}else if(a<-5 && a>-9){
+
+}else{
+
+}
+
+Python的if while后面加冒号
+if a == 1:
+else if 写为elif
+&&在Python里写为  and

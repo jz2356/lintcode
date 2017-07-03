@@ -1,0 +1,32 @@
+public class Solution {
+    /**
+     * @param n a positive integer
+     * @param primes the given prime list
+     * @return the nth super ugly number
+     */
+    public int nthSuperUglyNumber(int n, int[] primes) {
+        // Write your code here
+        int []  uN = new int [n];              //丑陋数的集合
+        uN[0] = 1;                             //第一个肯定是1
+        int [] idx = new int [primes.length];  //素数集的下标集合
+        
+        for (int i =1;i < n;i++){
+            int min = Integer.MAX_VALUE;
+            
+            for(int j = 0;j<primes.length;j++){
+                min = Math.min(min, primes[j] * uN[idx[j]]);
+            }
+            
+            uN[i] = min;
+            
+            for(int j = 0;j<idx.length;j++){
+                if(uN[idx[j]]*primes[j] == min){
+                    idx[j]++;
+                }
+            }
+        }
+        
+        return uN[n-1];
+        
+    }
+}

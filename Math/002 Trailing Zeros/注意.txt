@@ -1,0 +1,3 @@
+Python的while后加冒号，在定义number时不用加前面的long
+
+Java定义number用long不用int

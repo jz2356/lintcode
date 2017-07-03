@@ -1,0 +1,12 @@
+Python里的for循环
+
+for i in  range （1,5）：
+
+
+i=1 2 3 4    没有5
+
+
+正无穷用  float("inf")  表示
+
+
+Java不知道为什么不能用Ingeter.MAX_VALUE和MATH.min，只能暴力解释
