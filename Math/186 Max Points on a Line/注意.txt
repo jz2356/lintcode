@@ -1,0 +1,7 @@
+HashMap:
+
+创建：
+HashMap<Double, Integer> map = new HashMap<Double, Integer>(); 
+
+放东西
+map.put(k,map.get(k)+1);

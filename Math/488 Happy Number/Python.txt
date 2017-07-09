@@ -1,0 +1,15 @@
+class Solution:
+    # @param {int} n an integer
+    # @return {boolean} true if this is a happy number or false
+    def isHappy(self, n):
+        # Write your code here
+        
+        while n!=1 and n!=4:
+            ans = 0
+            while(n!=0):
+
+                ans += (n%10)*(n%10) 
+                n = n/10
+            n = ans
+                
+        return n==1

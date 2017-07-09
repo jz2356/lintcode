@@ -1,0 +1,9 @@
+Java:
+Arrays.fill(dp, Integer.MAX_VALUE);
+就是把数组dp全用MAX_VALUE填满
+
+
+Python：
+开方平方一类的
+x**n
+注意是两个星号

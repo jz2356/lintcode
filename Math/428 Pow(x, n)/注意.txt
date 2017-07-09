@@ -1,0 +1,5 @@
+Java里调用自身直接即可
+
+Python里需要在前面加self
+即
+self.myPow(x,n)

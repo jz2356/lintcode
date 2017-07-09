@@ -1,0 +1,62 @@
+/**
+ * Definition for a point.
+ * class Point {
+ *     int x;
+ *     int y;
+ *     Point() { x = 0; y = 0; }
+ *     Point(int a, int b) { x = a; y = b; }
+ * }
+ */
+public class Solution {
+    /**
+     * @param points an array of point
+     * @return an integer
+     */
+    public int maxPoints(Point[] points) {
+        // Write your code here
+        if(points == null){                          
+            return 0;
+        }
+        if (points.length == 0){
+            return 0;
+        }else if (points.length <3){
+            return points.length;
+        }
+        
+        int ans = 0;
+        
+        
+        for(int i =0 ; i<points.length;i++){
+            double k = 0;
+            HashMap<Double, Integer> map = new HashMap<Double, Integer>();   //HashMap
+
+            int p_same = 0;     //有没有重复的点
+            int k_inf = 1;      //平行于y轴的情况
+            
+            for(int j = 0;j<points.length;j++){
+                if(i!=j){
+                    if (points[j].x == points[i].x && points[j].y == points[i].y){
+                        p_same++;
+                    }
+                    if(points[i].x == points[j].x){
+                        k_inf++;
+                        continue;   //注意这里要加continue，否则跳出去了
+                    }
+                    
+                    k = (double)(points[i].y - points[j].y)/(points[i].x - points[j].x);
+                    if(map.containsKey(k)) {
+                        map.put(k,map.get(k)+1);   //如果原来就有这个k，说明这几个点在同一直线上，所以get（k）+1
+                    }else{
+                        map.put(k,2);              //没有这个k说明是一条新的线，肯定就2个点       
+                    }
+                
+                    ans = Math.max(ans,map.get(k)+p_same);  //相当于每一轮j到这里看和以前的j谁多
+                
+                }
+      
+            }
+	    ans = Math.max(ans,k_inf);
+        }
+        return ans;
+    }
+}

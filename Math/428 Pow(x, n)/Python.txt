@@ -1,0 +1,16 @@
+class Solution:
+    # @param {double} x the base number
+    # @param {int} n the power number
+    # @return {double} the result
+    def myPow(self, x, n):
+        # Write your code here
+        if n == 0:
+            return 1;
+        elif n == 1:
+            return x;
+        elif n < 0:
+            n = -n;
+            temp = self.myPow(x,n/2)*self.myPow(x,n-n/2)
+            return 1/temp
+        else:
+            return self.myPow(x,n/2)*self.myPow(x,n-n/2)
