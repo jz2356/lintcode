@@ -1,0 +1,12 @@
+List<Map.Entry<Integer, Double>> results = new ArrayList<Map.Entry<Integer, Double>>();
+
+Map.Entry是Map声明的一个内部接口，此接口为泛型，定义为Entry<K,V>。它表示Map中的一个实体（一个key-value对）。接口中有getKey(),getValue方法。
+
+map.entrySet（）是将map里的每一个键值对取出来封装成一个Entry对象在存到一个Set里面。
+Map.Entry<String, String>的意思是一个泛型，表示Entry里装的是两个string的字符串
+这里还是不是很明白
+
+
+
+这句是题目给的，但是并不太明白
+results.add(new AbstractMap.SimpleEntry<Integer, Double>(i, dp[n][i]));
