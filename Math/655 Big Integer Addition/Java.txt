@@ -1,0 +1,53 @@
+public class Solution {
+    /**
+     * @param num1 a non-negative integers
+     * @param num2 a non-negative integers
+     * @return return sum of num1 and num2
+     */
+    public String addStrings(String num1, String num2) {
+        // Write your code here
+        if (num1.equals("0")){
+            return num2;
+        }
+        if (num2.equals("0")){
+            return num1;
+        }
+   
+        int len1 = num1.length();  
+        int len2 = num2.length();  
+          
+        int len = Math.max(len1 , len2);  
+        char[] ans = new char[len + 1];     //多出一位防止进位
+        for(int i = 0; i<len + 1; i++){  
+            ans[i] = '0';  
+        }  
+          
+        int n = 0,  n1 = 0,  n2 = 0,temp = 0;  
+        for(int i = 0;i<len + 1;i++){  
+            if(i < len1){  
+                n1 = num1.charAt(len1 - 1 - i) - '0';  //charAt是指提取第几位，这里使用len-1-i，从后往前数
+            }else{  
+                n1 = 0;  
+            }  
+            if(i < len2){  
+                n2 = num2.charAt(len2 - 1 - i) - '0';  
+            }else{  
+                n2 = 0;  
+            }  
+            temp = n1 + n2 + n;  
+            ans[len - i] = (char)(temp%10 + '0');  
+            n = temp/10;               //看有没有进位             
+        }  
+        int j ;  
+        for(j = 0 ; j<len + 1; j++){  //这段是去除前面的0
+            if(ans[j] != '0'){  
+                break;  
+            }  
+        }  
+        String result = "";  
+        for(int i = j; i<len + 1 ; i++){  
+            result += ans[i];  
+        }  
+        return result;  
+    }  
+}  
