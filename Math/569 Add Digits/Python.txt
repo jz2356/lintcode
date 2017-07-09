@@ -1,0 +1,16 @@
+class Solution:
+    # @param {int} num a non-negative integer
+    # @return {int} one digit
+    def addDigits(self, num):
+        # Write your code here
+        while num/10 !=0:
+            b = 0
+            
+            while num/10 != 0:
+                a = num%10
+                b = b + a
+                num = num/10
+                
+            num = num + b
+        
+        return num
