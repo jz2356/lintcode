@@ -1,0 +1,30 @@
+class Solution:
+    # @param {int[]} A an integer array
+    # @return nothing
+    def sortIntegers2(self, A):
+        # Write your code here
+        
+        self.QuickSort(0,len(A)-1,A);
+        
+        
+    def QuickSort(self,a,b,A):
+        if a>=b:
+            return
+        
+        l,r = a,b
+        pivot = A[(a+b)/2]
+        
+        while l <= r:   
+            while l <=r and A[l] < pivot:
+                l += 1
+                
+            while l<=r and A[r] > pivot:
+                r -= 1
+                
+            if l<=r:
+                A[l],A[r] = A[r],A[l]
+                l += 1
+                r -= 1
+                
+        self.QuickSort(a,r,A)
+        self.QuickSort(l,b,A)

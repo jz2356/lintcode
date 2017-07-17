@@ -1,0 +1,5 @@
+Python  
+len(nums)
+
+Python里交换比较方便
+nums[i],nums[i+1] = nums[i+1],nums[i]

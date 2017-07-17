@@ -1,0 +1,56 @@
+public class Solution {
+    /**
+     * @param A an integer array
+     * @return void
+     */
+     
+    private static  int[] aux;
+
+    public void sortIntegers2(int[] A) {
+        aux = new int[A.length];
+        int l = A.length;
+        if(l!=0){
+            MergeSort(0,l-1,A);
+        }
+
+    }
+
+     private void MergeSort(int a, int b,int[] x) {
+        if (a >= b) {
+            return;
+        }
+
+        int mid = (a+b)/2;
+        MergeSort(a,mid,x);
+        MergeSort(mid+1,b,x);
+        Merge(a,mid,b,x);
+
+    }
+
+    //¹é²¢Ëã·¨
+    private void Merge( int a, int mid, int b,int[] x){
+        int i = a;
+        int j = mid + 1;
+        
+        for(int k = a;k <= b;k++){
+            aux[k] = x[k];
+        }
+         for(int k =a;k<=b;k++){
+            if(i>mid){
+                x[k] = aux[j];
+                j++;
+            }else if(j>b){
+                x[k] = aux[i];
+                i++;
+            }else if(aux[j] < aux[i]){
+                x[k] = aux[j];
+                j++;
+            }else{
+                x[k] = aux[i];
+                i++;
+            }
+        }
+        
+        
+    }
+}

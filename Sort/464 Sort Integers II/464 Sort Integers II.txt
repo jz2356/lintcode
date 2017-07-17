@@ -1,0 +1,12 @@
+Given an integer array, sort it in ascending order. Use quick sort, merge sort, heap sort or any O(nlogn) algorithm.
+
+
+Example
+Given [3, 2, 1, 4, 5], return [1, 2, 3, 4, 5].
+
+
+给一组整数，按照升序排序。使用归并排序，快速排序，堆排序或者任何其他 O(n log n) 的排序算法。
+
+
+样例
+给出 [3, 2, 1, 4, 5], 排序后的结果为 [1, 2, 3, 4, 5]。
