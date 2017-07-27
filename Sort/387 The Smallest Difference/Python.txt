@@ -1,0 +1,21 @@
+class Solution:
+    # @param A, B: Two lists of integer
+    # @return: An integer
+    def smallestDifference(self, A, B):
+        # write your code here
+        m = len(A)
+        n = len(B)
+        A.sort()
+        B.sort()
+        temp = abs(A[0]-B[0])
+        a,b = 0,0
+        
+        while a<m and b<n:
+            if temp> abs(A[a] - B[b]):
+                temp = abs(A[a] - B[b])
+            if A[a] < B[b]:
+                a +=1
+            else:
+                b +=1
+                
+        return temp

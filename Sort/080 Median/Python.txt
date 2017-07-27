@@ -1,0 +1,15 @@
+class Solution:
+    """
+    @param nums: A list of integers.
+    @return: An integer denotes the middle number of the array.
+    """
+    def median(self, nums):
+        # write your code here
+        nums.sort()
+        l = len(nums)
+        
+        if l%2==0:
+            return nums[l/2-1]
+            
+        else:
+            return nums[l/2]

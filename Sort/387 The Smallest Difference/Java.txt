@@ -1,0 +1,30 @@
+public class Solution {
+    /**
+     * @param A, B: Two integer arrays.
+     * @return: Their smallest difference.
+     */
+    public int smallestDifference(int[] A, int[] B) {
+        // write your code here
+        int m = A.length;
+        int n = B.length;
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int temp = Math.abs(A[0]-B[0]);
+        int a = 0;
+        int b = 0;
+        
+        while(a<m && b<n){
+            if(temp > Math.abs(A[a]-B[b])){
+                temp = Math.abs(A[a]-B[b]);
+            }
+            if(A[a] < B[b]){
+               a++;
+            }else{
+                b++;
+            }
+        }
+         
+        return temp;
+        
+    }
+}

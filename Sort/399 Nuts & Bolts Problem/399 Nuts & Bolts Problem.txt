@@ -1,0 +1,41 @@
+Given a set of n nuts of different sizes and n bolts of different sizes. There is a one-one mapping between nuts and bolts. Comparison of a nut to another nut or a bolt to another bolt is not allowed. It means nut can only be compared with bolt and bolt can only be compared with nut to see which one is bigger/smaller.
+
+We will give you a compare function to compare nut with bolt.
+
+
+Example
+Given nuts = ['ab','bc','dd','gg'], bolts = ['AB','GG', 'DD', 'BC'].
+
+Your code should find the matching bolts and nuts.
+
+one of the possible return:
+
+nuts = ['ab','bc','dd','gg'], bolts = ['AB','BC','DD','GG'].
+
+we will tell you the match compare function. If we give you another compare function.
+
+the possible return is the following:
+
+nuts = ['ab','bc','dd','gg'], bolts = ['BC','AA','DD','GG'].
+
+So you must use the compare function that we give to do the sorting.
+
+The order of the nuts or bolts does not matter. You just need to find the matching bolt 
+
+
+
+
+给定一组 n 个不同大小的 nuts 和 n 个不同大小的 bolts。nuts 和 bolts 一一匹配。 不允许将 nut 之间互相比较，也不允许将 bolt 之间互相比较。也就是说，只许将 nut 与 bolt 进行比较， 或将 bolt 与 nut 进行比较。请比较 nut 与 bolt 的大小。
+
+
+样例
+给出 nuts = ['ab','bc','dd','gg'], bolts = ['AB','GG', 'DD', 'BC']
+你的程序应该找出bolts和nuts的匹配。
+一组可能的返回结果是：
+nuts = ['ab','bc','dd','gg'], bolts = ['AB','BC','DD','GG']
+我们将给你一个匹配的比较函数，如果我们给你另外的比较函数，可能返回的结果是：
+nuts = ['ab','bc','dd','gg'], bolts = ['BC','AB','DD','GG']
+
+因此的结果完全取决于比较函数，而不是字符串本身。
+因为你必须使用比较函数来进行排序。
+各自的排序当中nuts和bolts的顺序是无关紧要的，只要他们一一匹配就可以。

@@ -1,0 +1,46 @@
+class Solution {
+    /*
+     * @param k : description of k
+     * @param nums : array of nums
+     * @return: description of return
+     */
+    public int kthLargestElement(int k, int[] nums) {
+        int l = nums.length;
+        if(l!=0){
+            QuickSort(0,l-1,nums);
+        }
+        return nums[l-k];
+    }
+    
+    private void QuickSort(int a, int b,int[] x) {
+       if (a >= b) {
+            return;
+        }
+        
+        int l = a;
+        int r = b;
+        int temp = 0;
+        int pivot = x[(l + r) / 2];
+        
+        while(l<=r){
+            while(l<=r && x[l]<pivot){
+                l++;
+            }
+            while(l<=r && x[r]>pivot){
+                r--;
+            }
+            if(l<=r){
+                temp = x[r];
+                x[r] = x[l];
+                x[l] = temp;
+                l++;
+                r--;
+            }
+        }
+        
+        QuickSort(a,r,x);
+        QuickSort(l,b,x);
+    }
+}
+
+
